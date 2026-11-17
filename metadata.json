@@ -1,0 +1,6 @@
+{
+  "name": "Kinetix Motion Studio",
+  "description": "Pro motion graphics, keyframe animation, bezier easing, and AI-powered video editing studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --studio-bg: #12151E;
+    --studio-surface: #1A1E2B;
+    --studio-panel: #222637;
+    --studio-control: #2B3044;
+    --studio-border: rgba(255, 255, 255, 0.08);
+    --studio-accent: #2BE0A5;
+    --studio-amber: #F2A833;
+    --studio-cyan: #38B2CE;
+  }
+
+  * {
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    overscroll-behavior: none;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #12151E;
+    color: #EEF1F7;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Transparent canvas checkerboard pattern matching Alight Motion */
+.checkerboard-bg {
+  background-color: #1c202e;
+  background-image:
+    linear-gradient(45deg, #262b3d 25%, transparent 25%),
+    linear-gradient(-45deg, #262b3d 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #262b3d 75%),
+    linear-gradient(-45deg, transparent 75%, #262b3d 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Custom mint range slider (kept for fallback compatibility) */
+input[type="range"].studio-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"].studio-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: #333950;
+}
+input[type="range"].studio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2BE0A5;
+  border: 2px solid #161925;
+  margin-top: -5px;
+  box-shadow: 0 0 8px rgba(43, 224, 165, 0.4);
+  transition: transform 0.12s ease;
+}
+input[type="range"].studio-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
